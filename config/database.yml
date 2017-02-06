@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: brandhouse_development
+
+test:
+  <<: *default
+  database: brandhouse_test
+
+production:
+  <<: *default
+  database: dinasty_production
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
