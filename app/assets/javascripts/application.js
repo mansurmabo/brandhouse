@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require bootstrap.min
+//= require jquery.scrollUp.min
+//= require price-range
+//= require jquery.prettyPhoto
+//= require main
+// //= require_tree .
