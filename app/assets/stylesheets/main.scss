@@ -16,6 +16,10 @@ ul li {
   list-style: none;
 }
 
+.clearfix{
+  clear: both;
+}
+
 a:hover {
 outline: none;
 text-decoration:none;
