@@ -10,11 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery-1.11.2.min
+//= require jquery-2.1.3.min
 //= require bootstrap.min
 //= require jquery.scrollUp.min
 //= require price-range
 //= require jquery.prettyPhoto
 //= require main
+
+// for contact page
+//= require gmaps
+//= require contact
+// need apply with url  http://maps.google.com/maps/api/js?sensor=true
+
+
 // //= require_tree .

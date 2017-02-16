@@ -14,6 +14,8 @@
  *= require reset
  *= require bootstrap.min
  *= require font-awesome.min
+ *= require prettyPhoto
+ *= require price-range
  *= require animate
  *= require main
  *= require responsive
