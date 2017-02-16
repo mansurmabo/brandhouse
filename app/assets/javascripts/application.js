@@ -10,10 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery-1.11.2.min
-//= require jquery-2.1.3.min
+//= require jquery
+//= require jquery_ujs
+//= require active_admin
+
 //= require bootstrap.min
-//= require jquery.scrollUp.min
+// //= require jquery.scrollUp.min
 //= require price-range
 //= require jquery.prettyPhoto
 //= require main
