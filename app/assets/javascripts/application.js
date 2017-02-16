@@ -10,20 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
 //= require active_admin
 
-//= require bootstrap.min
-// //= require jquery.scrollUp.min
-//= require price-range
-//= require jquery.prettyPhoto
+//= require vendor/bootstrap.min.js
+// require jquery.scrollUp.min
+//= require vendor/price-range.js
+//= require vendor/jquery.prettyPhoto.js
 //= require main
 
 // for contact page
-//= require gmaps
+//= require vendor/gmaps.js
 //= require contact
-// need apply with url  http://maps.google.com/maps/api/js?sensor=true
 
 
 // //= require_tree .
