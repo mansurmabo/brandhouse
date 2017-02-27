@@ -16,6 +16,8 @@ gem 'faker'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'active_skin'
 
+gem 'faker'
+
 group :development, :test do
   gem 'byebug'
   gem 'pry'
