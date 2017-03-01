@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.all.order(id: :desc)
   end
 
   def new
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   private
 
   def products_params
-    params.require(:product).permit(:vendor_code, :title, :brand, :availability ,:price ,:description ,:image)
+    params.require(:product).permit(:vendor_code, :title, :brand, :availability ,:price ,:description ,{images: []})
   end
 
 

@@ -26,8 +26,8 @@
         <%= f.text_area :description, placeholder: 'Описание' %>
       </div>
       <div class="form-row">
-        <%= f.label :image, 'Фото' %>
-        <%= f.file_field :image %>
+        <%= f.label :images, 'Фото' %>
+        <%= f.file_field :images, multiple: true %>
       </div>
       <div class="form-row">
         <input type="submit" class="submit_btn" value="Добавить" >
