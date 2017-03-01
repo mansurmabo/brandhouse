@@ -16,7 +16,6 @@ gem 'faker'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'active_skin'
 
-gem 'faker'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 
