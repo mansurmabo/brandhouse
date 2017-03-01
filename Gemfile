@@ -16,8 +16,14 @@ gem 'faker'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'active_skin'
 
+# for upload image
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
+
+# for slick slider
+gem 'jquery-slick-rails'
+
+
 
 group :development, :test do
   gem 'byebug'
