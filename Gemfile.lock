@@ -60,6 +60,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    ancestry (2.2.2)
+      activerecord (>= 3.0.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (6.0.4)
@@ -217,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   active_skin
   activeadmin (~> 1.0.0.pre4)
+  ancestry
   byebug
   carrierwave!
   coffee-rails (~> 4.1.0)

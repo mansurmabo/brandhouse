@@ -23,6 +23,7 @@ gem 'mini_magick'
 # for slick slider
 gem 'jquery-slick-rails'
 
+gem 'ancestry'
 
 
 group :development, :test do
