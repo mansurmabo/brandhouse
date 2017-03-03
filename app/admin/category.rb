@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-  permit_params :title
+  permit_params :title, :ancestry
   index do
     selectable_column
     id_column
@@ -15,6 +15,7 @@ ActiveAdmin.register Category do
   form do |f|
     inputs 'Details' do
       f.input :title
+      f.input :ancestry, :as => :select, :collection => Category.all.map {|u| [u.title, u.id]}
     end
 
     f.actions

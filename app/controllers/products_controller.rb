@@ -1,4 +1,5 @@
-class ProductsController < ApplicationController
+class ProductsController < BaseController
+  # skip_before_action check_current_user only: [:index, :show]
 
   def index
     @products = Product.all.order(id: :desc)
@@ -24,7 +25,7 @@ class ProductsController < ApplicationController
   private
 
   def products_params
-    params.require(:product).permit(:vendor_code, :title, :brand, :availability ,:price ,:description ,{images: []})
+    params.require(:product).permit(:vendor_code, :title, :brand_id, :category_id, :availability ,:price ,:description ,{images: []})
   end
 
 

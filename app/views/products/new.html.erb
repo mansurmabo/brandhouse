@@ -10,8 +10,12 @@
         <%= f.text_field :title, placeholder: 'Название' %>
       </div>
       <div class="form-row">
-        <%= f.label :brand, 'Бренд' %>
-        <%= f.text_field :brand, placeholder: 'Бренд' %>
+        <%= f.label :brand_id, 'Бренд' %>
+        <%= f.collection_select :brand_id, Brand.all, :id, :title, {include_blank: 'Выберите бренд'} %>
+      </div>
+      <div class="form-row">
+        <%= f.label :category_id, 'Категория' %>
+        <%= f.collection_select :category_id, Category.all, :id, :title, { include_blank: 'Выберите категорию'} %>
       </div>
       <div class="form-row">
         <%= f.label :availability, 'Наличие товара' %>
