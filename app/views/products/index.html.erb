@@ -20,7 +20,7 @@
                 <div class="single-products">
                   <div class="productinfo text-center">
                     <a href="<%= product_path(product) %>">
-                      <img class="img-responsive" src="<%= product.images[0].url %>" alt="">
+                      <img class="img-responsive" src="<%= product.images[0].url(:main_thumb) %>" alt="">
                     </a>
                     <h2><%= product.price %></h2>
                     <p><%= product.title %></p>

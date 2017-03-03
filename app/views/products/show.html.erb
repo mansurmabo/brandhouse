@@ -9,7 +9,7 @@
         <div class="product-details"><!--product-details-->
           <div class="col-sm-5">
             <div class="view-product">
-              <img src="<%= image_path image_path @product.images[0].url  %>" alt="" />
+              <img src="<%= image_path image_path @product.images[0].url(:large)  %>" alt="" />
               <h3>ZOOM</h3>
             </div>
               <!-- Wrapper for slides -->
@@ -17,7 +17,7 @@
                 <% @product.images.each do |image | %>
                   <div class="slick-slide">
                     <a href="">
-                      <img src="<%= image_path image.url %>" alt="" style="width: 100%;">
+                      <img src="<%= image_path image.url(:main_thumb) %>" alt="" style="width: 100%;">
                     </a>
                   </div>
                 <% end %>
@@ -40,7 +40,7 @@
                   </button>
 								</span>
               <p><b>Наличие:</b> <%= @product.availability %></p>
-              <p><b> Бренд:</b> <%= @product.brand %></p>
+              <p><b> Бренд:</b> <%= @product.brand.title %></p>
               <a href=""><img src="<%= image_path '/uploads/product-details/share.png' %>" class="share img-responsive"  alt="" /></a>
             </div><!--/product-information-->
           </div>
