@@ -1,0 +1,14 @@
+<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+
+<% unless session[:carts].present? %>
+    <li><a href="<%= carts_path %>"><i class="fa fa-shopping-cart"></i>Корзина</a></li>
+<% else %>
+    <li>
+      <a href="<%= carts_path %>"><i class="fa fa-shopping-cart"></i><%= "Корзина(#{session[:carts].count})" %>
+      </a>
+    </li>
+<% end %>
+
+<li><a href="#"><i class="fa fa-lock"></i> Login</a></li>
