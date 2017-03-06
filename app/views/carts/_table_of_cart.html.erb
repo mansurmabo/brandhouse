@@ -41,7 +41,7 @@
             <p class="cart_total_price"><%= "#{total_price_of_one}" %></p>
           </td>
           <td class="cart_delete">
-            <%= link_to remove_product_carts_path(product_id: product.id), class: 'cart_quantity_delete', method: :delete do %>
+            <%= link_to remove_product_carts_path(product_id: product.id), class: 'cart_quantity_delete', method: :delete, data: {confirm: 'Вы уверены?'} do %>
                 <i class="fa fa-times">
                   Удалить
                 </i>
