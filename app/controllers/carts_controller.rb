@@ -43,11 +43,14 @@ class CartsController < ApplicationController
   end
 
   def add_quantity(product_id, quantity)
-     session[:carts][product_id] += quantity.to_i
+    session[:carts][product_id] += quantity.to_i
   end
 
   def subtract_quantity(product_id, quantity)
-    session[:carts][product_id] -= quantity.to_i
+    if session[:carts][product_id] == 1
+      return session[:carts]
+    else
+      session[:carts][product_id] -= quantity.to_i
+    end
   end
-
 end
