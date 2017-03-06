@@ -1,0 +1,61 @@
+
+  <table class="table table-condensed">
+    <thead>
+    <tr class="cart_menu">
+      <td class="image">Товар</td>
+      <td class="description"></td>
+      <td class="price">Цена за ед.</td>
+      <td class="quantity">Количество</td>
+      <td class="total">Общая сумма</td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @carts.each do |product_id, quantity| %>
+        <% product = Product.find(product_id) %>
+        <tr>
+          <td class="cart_product">
+            <!--<a href=""><img src="<%# image_path '/uploads/carts/one.png' %>" alt=""></a>-->
+          </td>
+          <td class="cart_description">
+            <h4><a href="#n"><%= product.title %></a></h4>
+          </td>
+          <td class="cart_price">
+            <p><%= product.price %></p>
+          </td>
+          <td class="cart_quantity">
+            <div class="cart_quantity_button">
+              <%= link_to reduce_quantity_carts_path(product_id: product.id, quantity: 1), class: 'cart_quantity_down', method: :get, remote: true do %>
+                  -
+              <% end %>
+
+              <input class="cart_quantity_input" type="text" readonly name="quantity" value="<%= quantity %>" autocomplete="off" size="2">
+
+              <%= link_to increase_quantity_carts_path(product_id: product.id, quantity: 1), class: 'cart_quantity_up', method: :get, remote: true do %>
+                  +
+              <% end %>
+            </div>
+          </td>
+          <td class="cart_total">
+            <% total_price_of_one = product.price * quantity %>
+            <p class="cart_total_price"><%= "#{total_price_of_one}" %></p>
+          </td>
+          <td class="cart_delete">
+            <%= link_to remove_product_carts_path(product_id: product.id), class: 'cart_quantity_delete', method: :delete do %>
+                <i class="fa fa-times">
+                  Удалить
+                </i>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <hr>
+  <% total_price_of_all = 0 %>
+  <% @carts.each do |product_id, quantity| %>
+      <% product = Product.find(product_id) %>
+      <% total_price_one = product.price * quantity %>
+      <% total_price_of_all += total_price_one %>
+  <% end %>
+  <h3 class="total_price"><%= "Итого: #{total_price_of_all}" %></h3>
