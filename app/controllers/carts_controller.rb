@@ -20,7 +20,15 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
+  def increase_quantity
+    @carts = session[:carts]
+    add_quantity(params[:product_id], params[:quantity].to_i)
+  end
 
+  def reduce_quantity
+    @carts = session[:carts]
+    subtract_quantity(params[:product_id], params[:quantity].to_i)
+  end
 
   private
 
@@ -34,6 +42,12 @@ class CartsController < ApplicationController
     session[:carts].delete product_id
   end
 
+  def add_quantity(product_id, quantity)
+     session[:carts][product_id] += quantity.to_i
+  end
 
+  def subtract_quantity(product_id, quantity)
+    session[:carts][product_id] -= quantity.to_i
+  end
 
 end
