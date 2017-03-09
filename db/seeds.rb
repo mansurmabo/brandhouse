@@ -5,4 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-AdminUser.create!(email: 'brandhousekz@gmail.com', password: 'password', password_confirmation: 'password')
+# AdminUser.create!(email: 'brandhousekz@gmail.com', password: 'password', password_confirmation: 'password')
+
+BRANDS = %w( Adidas Nike Fendi Louis-Vuitton Salvatore-Ferragamo Gucci
+  Dolce&Gabbana Prada Giorgio-Armani Channel Christian-Dior Versace Burberry  )
+CATEGORY = %w( Верхняя-Одежда Брюки Джинсы Головные-Уборы Костюмы Спортивные-Костюмы )
+
+BRANDS.map{ |title| Brand.create title: title }
+CATEGORY.map{ |title| Category.create title: title }

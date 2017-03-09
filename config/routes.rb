@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root 'pages#show'
+  root 'products#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
 
   resources :carts, only: [:index] do
     get 'add_to_cart', on: :collection
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
     get 'increase_quantity', on: :collection
     get 'reduce_quantity', on: :collection
   end
+
+  resources :products
 
 end
 

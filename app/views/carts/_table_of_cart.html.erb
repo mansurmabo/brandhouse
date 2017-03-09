@@ -1,9 +1,8 @@
-
-  <table class="table table-condensed">
+<table class="table table-condensed">
     <thead>
     <tr class="cart_menu">
-      <td class="image">Товар</td>
-      <td class="description"></td>
+      <td class="image">Картинка</td>
+      <td class="description">Товар</td>
       <td class="price">Цена за ед.</td>
       <td class="quantity">Количество</td>
       <td class="total">Общая сумма</td>
@@ -15,25 +14,21 @@
         <% product = Product.find(product_id) %>
         <tr>
           <td class="cart_product">
-            <!--<a href=""><img src="<%# image_path '/uploads/carts/one.png' %>" alt=""></a>-->
+            <a href="<%= product_path(product) %>"><img src="<%= image_path product.images[0].url(:main_thumb_mobile) %>" alt=""></a>
           </td>
           <td class="cart_description">
-            <h4><a href="#n"><%= product.title %></a></h4>
+            <h4><a href="<%= product_path(product) %>"><%= product.title %></a></h4>
           </td>
           <td class="cart_price">
             <p><%= product.price %></p>
           </td>
           <td class="cart_quantity">
             <div class="cart_quantity_button">
-              <%= link_to reduce_quantity_carts_path(product_id: product.id, quantity: 1), class: 'cart_quantity_down', method: :get, remote: true do %>
-                  -
-              <% end %>
+              <a class="cart_quantity_down" data-remote="true" href="<%= reduce_quantity_carts_path(product_id: product.id, quantity: 1) %>"> - </a>
 
               <input class="cart_quantity_input" type="text" readonly name="quantity" value="<%= quantity %>" autocomplete="off" size="2">
 
-              <%= link_to increase_quantity_carts_path(product_id: product.id, quantity: 1), class: 'cart_quantity_up', method: :get, remote: true do %>
-                  +
-              <% end %>
+              <a class="cart_quantity_up" data-remote="true" href="<%= increase_quantity_carts_path(product_id: product.id, quantity: 1) %>"> + </a>
             </div>
           </td>
           <td class="cart_total">
@@ -41,11 +36,11 @@
             <p class="cart_total_price"><%= "#{total_price_of_one}" %></p>
           </td>
           <td class="cart_delete">
-            <%= link_to remove_product_carts_path(product_id: product.id), class: 'cart_quantity_delete', method: :delete, data: {confirm: 'Вы уверены?'} do %>
-                <i class="fa fa-times">
-                  Удалить
-                </i>
-            <% end %>
+            <a class="cart_quantity_delete" data-method="delete" data-confirm="Вы уверены?" href="<%= remove_product_carts_path(product_id: product.id) %>">
+              <i class="fa fa-times">
+                Удалить
+              </i>
+            </a>
           </td>
         </tr>
     <% end %>

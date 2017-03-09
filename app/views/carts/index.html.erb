@@ -5,16 +5,14 @@
       <div class="container">
         <div class="breadcrumbs">
           <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li class="active">Shopping Cart</li>
+            <li><a href="#">Главная</a></li>
+            <li class="active">Корзина</li>
           </ol>
-          <h4><%= link_to 'Очистить корзину', destroy_cart_carts_path %></h4>
         </div>
-
+        <h4 class="clear_cart"><%= link_to 'Очистить корзину', destroy_cart_carts_path %></h4>
         <div class="table-responsive cart_info">
         <%= render partial: 'carts/table_of_cart' %>
         </div>
-
       </div>
     </section> <!--/#cart_items-->
 
