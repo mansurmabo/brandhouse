@@ -1113,7 +1113,16 @@ h2.title {
   border-top-right-radius: 0;
 }
 
-.pagination  .active  a, .pagination  .active  span, .pagination  .active  a:hover, .pagination  .active  span:hover, .pagination  .active  a:focus, .pagination  .active  span:focus {
+//.pagination  .active  a, .pagination  .active  span, .pagination  .active  a:hover, .pagination  .active  span:hover, .pagination  .active  a:focus, .pagination  .active  span:focus {
+//  background-color: #FE980F;
+//  border-color: #FE980F;
+//  color: #FFFFFF;
+//  cursor: default;
+//  z-index: 2;
+//}
+
+em.current{
+  padding: 6px 12px;
   background-color: #FE980F;
   border-color: #FE980F;
   color: #FFFFFF;
@@ -1124,7 +1133,6 @@ h2.title {
 .pagination  li  a, .pagination  li  span {
   background-color: #f0f0e9;
   border: 0;
-  float: left;
   line-height: 1.42857;
   margin-left: -1px;
   padding: 6px 12px;
