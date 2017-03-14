@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get 'reduce_quantity', on: :collection
   end
 
+  resources :categories
+  resources :brands
   resources :products
 
 end
