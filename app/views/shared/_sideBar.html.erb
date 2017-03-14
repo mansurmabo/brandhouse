@@ -27,11 +27,11 @@
         <% else %>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h4 class="panel-title"><a href="#"><%= category.title %></a></h4>
+              <h4 class="panel-title"><a href="<%= category_path(category) %>"><%= category.title %></a></h4>
             </div>
           </div>
-        <%end %>
-      <%end %>
+        <% end %>
+      <% end %>
 
 
   </div><!--/category-products-->
@@ -41,7 +41,7 @@
     <div class="brands-name">
       <ul class="nav nav-pills nav-stacked">
         <% @brands.each do |brand| %>
-            <li><a href=""> <span class="pull-right">(<%= brand.products_count.nil?  ? '0' : brand.products_count  %>)</span><%= brand.title %></a></li>
+            <li><a href="<%= brand_path(brand) %>"> <span class="pull-right">(<%= brand.products_count.nil?  ? '0' : brand.products_count  %>)</span><%= brand.title %></a></li>
         <%end %>
       </ul>
     </div>
