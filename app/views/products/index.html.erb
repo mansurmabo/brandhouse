@@ -3,24 +3,22 @@
     <img src="<%= image_path '/uploads/shop/advertisement.jpg' %>" alt="" />
   </div>
 </section>
-
 <section>
   <div class="container">
     <div class="row">
       <div class="col-sm-3">
         <%= render 'shared/sideBar' %>
       </div>
-
       <div class="col-sm-9 padding-right">
         <div class="features_items"><!--features_items-->
-          <h2 class="title text-center">Features Items</h2>
+          <h2 class="title text-center">Все товары</h2>
           <% @products.each do |product| %>
             <div class="col-sm-4">
               <div class="product-image-wrapper">
                 <div class="single-products">
                   <div class="productinfo text-center">
                     <a href="<%= product_path(product) %>">
-                      <img class="img-responsive" src="<%= product.images[0].url(:normal) %>" alt="<%= product.title %>">
+                      <img class="img-responsive" src="<%= product.images[0].url(:main_page_size) %>" alt="<%= product.title %>">
                     </a>
                     <h2><%= product.price %></h2>
                     <p><%= product.title %></p>
