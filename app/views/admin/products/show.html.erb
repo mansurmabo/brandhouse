@@ -1,0 +1,12 @@
+<hr>
+<h4><%= link_to 'Назад', admin_path %></h4>
+<% if @product.images.present? %>
+    <%= image_tag @product.images[0].url(:post_thumb) %>
+<% end %>
+<h4>Товар: <%= @product.title %></h4>
+<h4>Описание: <%= @product.description %></h4>
+<h4>Цена: <%= @product.price %></h4>
+<h4>Категория: <%= @product.category.title %></h4>
+<h4>Артикул: <%= @product.vendor_code %></h4>
+<h4>Бренд: <%= @product.brand.title %></h4>
+<hr>
