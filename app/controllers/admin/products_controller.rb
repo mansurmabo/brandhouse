@@ -30,6 +30,10 @@ class Admin::ProductsController < Admin::AdminController
     end
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
 
   private
 
