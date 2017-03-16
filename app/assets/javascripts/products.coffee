@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $('.add-to-cart').click ->
+
+    $button = $(this)
+
+    $product = $button.parents('.productinfo')
+
+    $in_cart = $product.find('.in_cart')
+
+    $in_cart.show().delay(800).fadeOut()
