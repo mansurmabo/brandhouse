@@ -1,0 +1,34 @@
+<div class="admin_table">
+   <h4><%= link_to 'Добавить товар', new_admin_product_path %></h4><h3>Все товары</h3>
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th class="image">Картинка</th>
+      <th class="description">Товар</th>
+      <th class="price">Цена</th>
+      <th class="category">Категория</th>
+      <th class="category">Бренд</th>
+      <th class="price">Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @products.each do |product| %>
+        <tr>
+          <% if product.images.present? %>
+              <td><%= image_tag product.images[0].url(:main_thumb_mobile) %></td>
+          <% else %>
+              <td>No picture</td>
+          <% end %>
+          <td><%= link_to product.title, admin_product_path(product) %></td>
+          <td><%= product.price %></td>
+          <td><%= product.category.title %></td>
+          <td><%= product.brand.title %></td>
+          <td>
+            <%= link_to 'Удалить', admin_product_path(product), method: :delete, data: {confirm: 'Вы уверены?'} %> /
+            <%= link_to 'Редактировать', edit_admin_product_path(product) %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
