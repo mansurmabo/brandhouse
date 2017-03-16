@@ -1,0 +1,41 @@
+<div class="form-block">
+  <h3> Добавить товар</h3>
+  <%= form_for [:admin, @product] do |f| %>
+      <div class="form-row">
+        <%= f.label :vendor_code, 'Артикул товара' %>
+        <%= f.text_field :vendor_code, placeholder: 'ID товара' %>
+      </div>
+      <div class="form-row">
+        <%= f.label :title, 'Название' %>
+        <%= f.text_field :title, placeholder: 'Название' %>
+      </div>
+      <div class="form-row">
+        <%= f.label :brand_id, 'Бренд' %>
+        <%= f.collection_select :brand_id, Brand.all, :id, :title, {include_blank: 'Выберите бренд'} %>
+      </div>
+      <div class="form-row">
+        <%= f.label :category_id, 'Категория' %>
+        <%= f.collection_select :category_id, Category.all, :id, :title, { include_blank: 'Выберите категорию'} %>
+      </div>
+      <div class="form-row">
+        <%= f.label :availability, 'Наличие товара' %>
+        <%= f.text_field :availability, placeholder: 'Наличие товара' %>
+      </div>
+      <div class="form-row">
+        <%= f.label :price, 'Цена' %>
+        <%= f.text_field :price, placeholder: 'Цена' %>
+      </div>
+      <div class="form-row">
+        <%= f.label :description, 'Описание' %>
+        <%= f.text_area :description, placeholder: 'Описание' %>
+      </div>
+      <div class="form-row">
+        <%= f.label :images, 'Фото' %>
+        <%= f.file_field :images, multiple: true %>
+      </div>
+      <div class="form-row">
+        <input type="submit" class="submit_btn" value="Добавить" >
+        <input type="reset" class="submit_btn reset_btn" value="Очистить" >
+      </div>
+  <% end %>
+</div>
