@@ -13,30 +13,32 @@
         <div class="features_items"><!--features_items-->
           <h2 class="title text-center">Все товары</h2>
           <% @products.each do |product| %>
-            <div class="col-sm-4">
-              <div class="product-image-wrapper">
-                <div class="single-products">
-                  <div class="productinfo text-center">
-                    <a href="<%= product_path(product) %>">
-                      <img class="img-responsive" src="<%= product.images[0].url(:main_page_size) %>" alt="<%= product.title %>">
-                    </a>
-                    <h2><%= product.price %></h2>
-                    <p><%= product.title %></p>
-                    <a href="<%= add_to_cart_carts_path(product_id: product.id, quantity: 1) %>" data-remote="true" class="btn btn-default add-to-cart">
-                      <i class="fa fa-shopping-cart"></i>
-                      Добавить в корзину
-                    </a>
+              <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                  <div class="single-products">
+                    <div class="productinfo text-center">
+                      <a href="<%= product_path(product) %>">
+                        <% if product.images.present? %>
+                            <img class="img-responsive" src="<%= product.images[0].url(:main_page_size) %>" alt="<%= product.title %>">
+                        <% end %>
+                      </a>
+                      <h2><%= product.price %></h2>
+                      <p><%= link_to product.title, product_path(product) %></p>
+                      <a href="<%= add_to_cart_carts_path(product_id: product.id, quantity: 1) %>" data-remote="true" class="btn btn-default add-to-cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        Добавить в корзину
+                      </a>
+                    </div>
+                  </div>
+                  <div class="choose">
+                    <ul class="nav nav-pills nav-justified">
+                      <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                      <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                    </ul>
                   </div>
                 </div>
-                <div class="choose">
-                  <ul class="nav nav-pills nav-justified">
-                    <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                    <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                  </ul>
-                </div>
               </div>
-            </div>
-          <% end  %>
+          <% end %>
 
           <div class="clearfix">
             <ul class="pagination">
