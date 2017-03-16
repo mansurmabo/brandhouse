@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'products#index'
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  #devise_for :admin_users, ActiveAdmin::Devise.config
+  #ActiveAdmin.routes(self)
 
 
   resources :carts, only: [:index] do
@@ -15,6 +15,13 @@ Rails.application.routes.draw do
   resources :categories
   resources :brands
   resources :products
+
+
+  namespace :admin do
+    get '/', to: 'admin#index'
+    resources :categories
+    resources :products
+  end
 
 end
 
