@@ -2546,3 +2546,14 @@ em.current{
   margin-left: 8%;
   margin-right: 8%;
 }
+
+.in_cart{
+  display: none;
+  position: absolute;
+  top: 140px;
+  left: 20px;
+  color: white;
+  font-size: 20px;
+  background: #FE980F;
+  padding: 0px 5px;
+}
