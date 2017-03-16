@@ -9,8 +9,9 @@
         <div class="product-details"><!--product-details-->
           <div class="col-sm-5">
             <div class="view-product">
-              <img src="<%= image_path image_path @product.images[0].url(:large) %>" alt=""/>
-
+              <% if @product.images.present? %>
+                  <img src="<%= image_path image_path @product.images[0].url(:large) %>" alt=""/>
+              <% end %>
               <h3>ZOOM</h3>
             </div>
             <!-- Wrapper for slides -->
