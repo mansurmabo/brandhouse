@@ -5,28 +5,7 @@ class ProductsController < BaseController
     @products = Product.paginate(page: params[:page], per_page: 1).order(id: :desc)
   end
 
-  def new
-    @product = Product.new
-  end
-
-  def create
-    @product = Product.new(products_params)
-    if @product.save
-      redirect_to @product
-    else
-      render 'new'
-    end
-  end
-
   def show
     @product = Product.find(params[:id])
   end
-
-  private
-
-  def products_params
-    params.require(:product).permit(:vendor_code, :title, :brand_id, :category_id, :availability ,:price ,:description ,{images: []})
-  end
-
-
 end
