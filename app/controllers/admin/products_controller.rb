@@ -17,6 +17,19 @@ class Admin::ProductsController < Admin::AdminController
     end
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(products_params)
+      redirect_to [:admin, @product]
+    else
+      render 'edit'
+    end
+  end
+
 
   private
 
