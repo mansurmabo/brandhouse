@@ -15,6 +15,7 @@ gem 'devise'
 gem 'faker'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'active_skin'
+gem 'kazkom_epay'
 
 # for upload image
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'

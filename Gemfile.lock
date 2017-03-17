@@ -123,6 +123,7 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kazkom_epay (1.5.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -230,6 +231,7 @@ DEPENDENCIES
   jquery-rails
   jquery-slick-rails
   jquery-ui-rails (~> 4.2.1)
+  kazkom_epay
   mini_magick
   pg
   pry
