@@ -1,0 +1,9 @@
+<% prefix_for_epay = Rails.env.development? ? '3dsecure' : 'epay' %>
+<form id="pay-epay" method="post" action="https://<%= prefix_for_epay %>.kkb.kz/jsp/process/logon.jsp" target="_blank">
+  <input type="hidden" name="Signed_Order_B64" value="<%= @base64_encoded_xml %>">
+  <input type="hidden" name="email" value="<%= current_user.email %>">
+  <input type="hidden" name="Language" value="rus">
+  <input type="hidden" name="BackLink" value="<%= root_url %>">
+  <input type="hidden" name="PostLink" value="<%= "обработчик_ответа_банка" %>">
+  <input type="submit" value="Оплатить">
+</form>
