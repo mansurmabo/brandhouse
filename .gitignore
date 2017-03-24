@@ -19,3 +19,4 @@
 /public/uploads/tmp
 /.idea
 .env
+/.vscode
