@@ -1,0 +1,19 @@
+<h4><%= link_to 'Добавить новый бренд', new_admin_brand_path %></h4>
+<hr>
+<h4>Все бренды</h4>
+
+<table class="table table-condensed">
+  <tr>
+    <td><b>Название</b></td>
+    <td><b>Действия</b></td>
+  </tr>
+  <% @brands.each do |brand| %>
+      <tr>
+        <td><%= brand.title %></td>
+        <td>
+          <%= link_to 'Редактировать', edit_admin_brand_path(brand) %> /
+          <%= link_to 'Удалить', admin_brand_path(brand), method: :delete, data: {confirm: 'Вы уверены?'} %>
+        </td>
+      </tr>
+  <% end %>
+</table>
