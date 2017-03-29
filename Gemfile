@@ -13,8 +13,8 @@ gem 'puma'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'faker'
-gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'active_skin'
+gem 'twitter-bootstrap-rails'
 gem 'kazkom_epay'
 
 # for upload image
