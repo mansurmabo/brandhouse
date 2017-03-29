@@ -1,0 +1,14 @@
+<div class="form-block">
+  <h3> Добавить категорию</h3>
+  <%= form_for [:admin, @category] do |f| %>
+
+      <div class="form-row">
+        <%= f.label :title, 'Название' %>
+        <%= f.text_field :title, placeholder: 'Название' %>
+      </div>
+
+      <div class="form-row">
+        <input type="submit" class="submit_btn" value="Добавить" >
+      </div>
+  <% end %>
+</div>
