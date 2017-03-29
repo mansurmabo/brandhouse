@@ -1,3 +1,88 @@
-// Place all the styles related to the admin/admin controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'bootstrap.min';
+
+
+.admin_table{
+  padding-top: 20px;
+}
+
+.sidebar_list_block{
+  background: #FE980F;
+  border-left: 1px solid #1b1b1b;
+  border-right: 1px solid #1b1b1b;
+  padding-top: 20px;
+
+  ul{
+    padding-left: 0px;
+    list-style-type: none;
+    li{
+      border-bottom: 1px solid #1b1b1b;
+      padding-left: 28px;
+
+      a{
+        padding: 10px 5px;
+        display: block;
+        color: #000;
+        text-decoration: none;
+      }
+      a:hover{
+        color: #fff;
+      }
+
+      &:hover, &.active{
+        background: green;
+      }
+    }
+  }
+}
+
+.product_pic{
+  float: left;
+  margin-right: 20px;
+}
+
+.product_info{
+  float: left;
+}
+
+.form-block{
+  width: 50%;
+  margin: 0 auto;
+  h3{
+    text-align: center;
+  }
+  .form-row{
+    margin: 0 0 10px 0;
+    input[type="text"]{
+      border: 1px solid #F7F7F0 ;
+      padding: 5px 10px ;
+      background: #F0F0E9;
+      width: 100%;
+    }
+    input[type="text"]:focus{
+      outline: none;
+      border: 1px solid #FE980F ;
+    }
+    input[type="text"]:hover {
+      border: 1px solid #FE980F;
+      transition: 1s;
+    }
+    .submit_btn{
+      background: #FE980F;
+      border: none;
+      color: #FFFFFF;
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      padding: 5px 10px;
+    }
+  }
+}
+
+.user_info input, select, textarea {
+  background: #F0F0E9;
+  border:0;
+  color: #696763;
+  padding: 5px;
+  width: 100%;
+  border-radius: 0;
+  resize: none
+}
