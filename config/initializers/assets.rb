@@ -15,6 +15,7 @@ Rails.application.config.assets.precompile += %w( jquery-1.11.2.min.js jquery-2.
 Rails.application.config.assets.precompile += %w( vendor/jquery-1.11.2.min.js )
 Rails.application.config.assets.precompile += %w( vendor/jquery-2.1.3.min.js )
 Rails.application.config.assets.precompile += %w( vendor/jquery-1.11.2.min.js vendor/jquery-2.1.3.min.js jsup.js )
+Rails.application.config.assets.precompile += %w(admin/admin.scss)
 
 # application.js, application.scss, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( active_admin.js active_admin.scss )
