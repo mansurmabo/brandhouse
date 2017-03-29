@@ -1,0 +1,12 @@
+
+<div class="sidebar_list_block">
+<ul>
+  <li><%= link_to 'Brandhouse', root_path %></li>
+
+  <li class="<%= 'active' if controller_name == 'products' %>"><%= link_to 'Все продукты', admin_products_path %></li>
+
+  <li class="<%= 'active' if controller_name == 'categories' %>"><%= link_to 'Все категории', admin_categories_path %></li>
+
+  <li class="<%= 'active' if controller_name == 'brands' %>"><%= link_to 'Все бренды', admin_brands_path %></li>
+</ul>
+</div>
