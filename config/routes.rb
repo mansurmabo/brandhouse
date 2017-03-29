@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   root 'products#index'
-  #devise_for :admin_users, ActiveAdmin::Devise.config
-  #ActiveAdmin.routes(self)
-
 
   resources :carts, only: [:index] do
     get 'add_to_cart', on: :collection
@@ -21,6 +18,7 @@ Rails.application.routes.draw do
     get '/', to: 'admin#index'
     resources :categories
     resources :products
+    resources :brands
   end
 
 end
