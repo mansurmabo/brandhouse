@@ -1,4 +1,3 @@
-//= require active_admin
 //= require vendor/bootstrap.min
 // require vendor/jquery.scrollUp.min
 //= require vendor/price-range.js
