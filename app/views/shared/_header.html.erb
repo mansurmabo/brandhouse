@@ -101,7 +101,9 @@
               </li>
               <li><a href="404.html">404</a></li>
               <li><a href="contact-us.html">Contact</a></li>
-              <li><a href="<%= admin_path %>"><b>АДМИНКА</b></a></li>
+              <% if admin_signed_in? %>
+                <li><a href="<%= admin_path %>"><b>АДМИНКА</b></a></li>
+              <% end %>
             </ul>
           </div>
         </div>
